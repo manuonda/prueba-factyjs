@@ -1,0 +1,805 @@
+
+
+
+
+
+
+
+
+
+<html class="no-js">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GeIns-HSE v${project.version}</title>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="http://localhost:8080/GEINS_Web/resources/css/style.css"/>
+<link rel="stylesheet" href="http://localhost:8080/GEINS_Web/resources/css/custom-ypf.css"/>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="fabric.min.js"></script></script>
+
+</head>
+
+
+
+<body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+                <!-- LOGO -->
+                
+                
+	                <!-- LOGO background-image: url(resources/images/geins-header.png);  va por default si tiene un logo asignado de un cliente lo debera reemplazar -->
+	                <div class="topbar-left logo-header-menu">
+	                    <!--<a href="index.html" class="logo"><span>Code<span>Fox</span></span><i class="mdi mdi-layers"></i></a>-->
+	                    <!-- Image logo -->
+	                    <a href="dashboard" class="logo">
+	                        <span>
+	                           <!-- Ahora el logo se debe cargar dinámicamente desde la el div logo-header-menu -->
+	                           <img id="imageLogoApp" src="" alt="" height="48" style="margin: auto;">
+	                        </span>
+	                        <i>
+	                           <!-- Ahora el logo se debe cargar dinámicamente desde la el div logo-header-menu -->
+	                           <!-- <img src="resources/images/icono-century-transparente.png" alt="" height="48" style="margin-top: -2px; margin-left: -3px;"> -->
+	                        </i>
+	                    </a>
+	                </div>
+                
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+
+                       
+                    </div><!-- end container-fluid -->
+                </div><!-- end navbar -->
+            </div>
+            <!-- Top Bar End -->
+
+
+
+
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu">
+                <div class="slimscroll-menu" id="remove-scroll">
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">Navegación</li>
+                           	<!-- 
+                            <li>
+                                <a href="/GEINS_Web/dashboard"><i class="fi-air-play"></i><span> Dashboard </span> </a>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                    <div class="clearfix"></div>
+                </div>
+                <!-- Sidebar -left -->
+            </div>
+            <!-- Left Sidebar End -->
+
+
+
+			<div class="content-page">
+			<!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+				
+
+				
+				
+
+
+
+
+
+
+<style>
+.ui-datepicker .ui-widget-content {
+    background: #999 none;
+}
+</style>
+
+<div class="row">
+	<div class="col-12">
+		<div class="page-title-box">
+			<h4 class="page-title">
+				Ejecución de Actuaciones
+			</h4>
+			<ol class="breadcrumb p-0 m-0">
+				<li>
+					<a href="dashboard">
+						Inicio
+					</a>
+				</li>
+				<li class="active">
+					Ejecución de Actuaciones
+				</li>
+			</ol>
+			<div class="clearfix"></div>
+			<hr>
+		</div>
+	</div>
+</div>
+
+<!--  datos de la instalacion -->
+
+
+
+
+
+
+
+<div class="card">
+	<div class="card-body">
+		<div class="row">
+			<div class="col-sm-9">
+				<h4 class="m-t-0 header-title">
+					Datos de la Instalación
+				</h4>
+			</div>
+			<input type="hidden" id="idEmpresaGestora"/>
+                        
+                        
+                            <div id="reportarIncidencia" class="col-sm-2">
+                                <div class="btn-group">
+                                <a class="btn btn-warning" href="incidencias?idEmpresaGestora=19&idInst=73&listaVacia=true&from=ejec">
+									Incidencias <span class="caret"></span>
+								</a>
+                                   
+                                </div>
+                            </div>
+                        
+			<div id="div-alertas" class="col-sm-1">
+				<h4 class="m-t-0 header-title">
+					
+						<a href="#" title="Alertas"
+							onclick="$('#modal_alertas').modal('show')">
+							<i id="icon-alertas" class="fa fa-bell mr-2" aria-hidden="true"
+								style="font-size:24px; color:red"></i>
+						</a>
+					
+				</h4>
+			</div>
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col">
+				<div class="form-group row">
+					<div class="col-sm-12">
+						<span style="font-weight:bold;">
+							Instalaci&oacute;n:
+						</span>
+						&nbsp;&nbsp;AEROPLANTA SAN FERNANDO
+					</div>var canvas = new fabric.Canvas('drawarea');	
+
+					<div class="form-group row">
+						<div class="col-sm-12">
+							<span style="font-weight:bold;">
+								Dirección:
+							</span>
+							&nbsp;&nbsp;Ruta Provincial 202,
+							
+						</div>
+					</div>
+				</div>
+			
+		</div>
+		
+		
+			<div class="row">
+				<div class="col">
+					<div class="form-group row">
+						<div class="col-sm-12">
+							<span style="font-weight:bold;">
+								Ubicación:
+							</span>
+							&nbsp;&nbsp;San Fernando - Buenos Aires - Argentina
+						</div>
+					</div>
+				</div>
+			</div>
+		
+
+		<div id="divSinFechaBase" class="row" style="display:none;">		
+			<div class="col">
+				<div class="form-group row">
+					<div class="col-sm-12">
+						<span style="color:red">
+							<label>
+								La instalación no dispone de una fecha de referencia a partir de la cual calcular la fecha de ejecución de las actuaciones (Fecha de puesta en servicio)
+							</label>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	
+	</div>
+</div>
+
+
+<div class="ibox" id="body-actuaciones">
+	<div class="ibox-content">
+		<div class="card">
+			<div class="card-body">
+				<form id="form-instalacion-actuaciones" action="guardarInstalacionActuaciones" method="post" enctype="multipart/form-data">
+
+					<ul class="nav nav-tabs nav-justified" role="tablist">
+						
+							<li class="nav-item" id="plano-tab">
+								<a class="nav-link active"
+									data-toggle="tab" href="#plano" role="tab" aria-controls="home" aria-selected="false">
+									<span class="d-block d-sm-none">
+										<i class="fa fa-home"></i>
+									</span>
+									<span class="d-none d-sm-block">
+										Plano de la Instalación
+									</span>
+								</a>
+							</li>
+					
+					</ul>
+					
+					<div class="tab-content clearfix">
+						
+							<div class="tab-pane active" id="plano">
+								
+
+
+
+<div class="card">
+	<div class="card-body pt-1">
+		
+			<div class="row">
+				<button type="button" class="btn-custom btn-rounded waves-effect waves-light pull-right btn-sm mr-1" href="#" onclick="zoomIn();">
+					<i class="fa fa-plus mr-1"></i>
+					Ampliar
+				</button>
+				<button type="button" class="btn-custom btn-rounded waves-effect waves-light pull-right btn-sm mr-1" href="#" onclick="zoomOut();">
+					<i class="fa fa-minus mr-1"></i>
+					Reducir
+				</button>
+				<a class="btn-custom btn-rounded waves-effect waves-light pull-right btn-sm" href="#" onclick="zoomRestablecer();">
+					<i class="fa fa-compress mr-1"></i>
+					Restablecer
+				</a>
+
+				<button class="btn-primary" type="button" onclick="agregarMapa()">Agregar Canvas</button>
+				<button class="btn-primary" type="button" onclick="agregarElementoExistente()">Agregar Figura Existente</button>
+                  
+			
+			</div>
+			<br/>
+			<div class="row">
+				<button id="btnTriangulo" type="button" class="btn-custom btn-rounded waves-effect waves-light pull-right btn-sm mr-1" href="#" onclick="agregarTrianguloNuevo();">
+					<i class="fa fa-plus mr-1"></i>
+					Triangulo
+				</button>
+				<button id="btnCirculo" type="button" class="btn-custom btn-rounded waves-effect waves-light pull-right btn-sm mr-1" href="#" onclick="agregarCirculoNuevo();">
+					<i class="fa fa-minus mr-1"></i>
+					Circulo
+				</button>
+				<button id="btnRectangulo" type="button" class="btn-custom btn-rounded waves-effect waves-light pull-right btn-sm mr-1" href="#" onclick="agregarRectanguloNuevo();">
+					<i class="fa fa-minus mr-1"></i>
+					Rectangulo
+				</button>
+				<button disabled id="btnPapelera" 
+					  type="button" 
+					  class="btn-custom btn-rounded waves-effect waves-light pull-right btn-sm mr-1" 
+					  onclick="eliminarFigura();">
+					<i class="fa fa-minus mr-1"></i>
+					Papelera
+				</button>
+				<button onclick="mostrarModal()" type="button"> Mostrar Modal
+				</button>
+			</div>
+			<br/>
+			<main role="main" class="container container-img">
+				<div id="img-mapa">
+					<canvas width="900" height="600" id="drawarea" style="border: 1px solid red;float: right" >     
+				    </canvas>
+                    <!-- <img id="img-mapa-64" src="http://localhost:8081/GEINS_Web/resources/images/planoInstalacion73.jpg" class="plano"> -->
+				</div>
+			</main> 
+		
+    </div>
+</div>
+</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- /.modal -->
+	</div> <!-- container-fluid -->
+ </div> <!-- content -->
+
+	<footer class="footer">
+            &copy; Copyright 2020 GrupoMost v${project.version} <span class="d-none d-sm-inline-block"></span>
+        </footer>
+	    <script>
+            var resizefunc = [];
+        </script>
+         </div>
+		</div>
+
+		<script>
+
+var canvas,
+            canvasOriginalWidth = 800,
+            canvasOriginalHeight = 600,
+            canvasWidth = 800,
+            canvasHeight = 600,
+            imgWidth,
+            imgHeight,
+            bgImage,
+            canvasScale = 1;
+
+function agregarMapa(){
+    canvas = new fabric.Canvas('drawarea');	
+
+	setCanvasZoom();
+	setCanvasSize({ height: canvasHeight, width: canvasWidth });
+
+setTimeout(function () {
+	setCanvasBackgroundImageUrl('http://localhost:8081/GEINS_Web/resources/images/planoInstalacion73.jpg', 0, 0, 1)
+}, 50)
+}
+
+
+function zoomIn(){
+
+	canvasScale *= 1.25;
+	// var zoom = canvas.getZoom();
+    // zoom *=  canvasScale;
+	// console.log('canvasScale zoomOut: ', canvasScale);
+	// canvas.setZoom(zoom);
+	canvas.setZoom(canvas.getZoom() * 1.1);
+    //scaleAndPositionImage();
+}
+
+function zoomOut(){
+	canvasScale /= 1.25;
+	// var zoom = canvas.getZoom();
+    // zoom /=  canvasScale;
+	// console.log('canvasScale zoomOut: ', canvasScale);
+	// canvas.setZoom(zoom);
+	canvas.setZoom(canvas.getZoom() / 1.1);
+
+    //scaleAndPositionImage();
+}
+/**
+ * Funcion de agregar figuras triangulos
+ * */
+function agregarFiguras(){
+	var circle = new fabric.Circle({
+					  radius: 20, fill: 'green', left: 100, top: 100, id:'circulo-1'
+					});
+				circle.on('selected', function(e) {
+                      console.log('selected a circle',e );
+				});
+
+				
+
+				var triangle = new fabric.Triangle({
+					  width: 20, height: 30, fill: 'blue', left: 50, top: 50 ,id:'triangulo1'
+					});
+				triangle.on('selected', function(e) {
+                       console.log('selected triangle', e);
+				});
+				
+				canvas.on('object:moving', function(opt){
+					 log('object:moving', opt) 
+				});
+
+				canvas.add(circle);
+				canvas.add(triangle);
+}
+
+			function agregarCanvas(){
+				alert("agregar canvas");
+				console.log("agregar canvas");
+				var canvas = new fabric.Canvas('drawarea');	
+		
+			
+		
+
+				var circle = new fabric.Circle({
+					  radius: 20, fill: 'green', left: 100, top: 100, id:'circulo-1'
+					});
+				circle.on('selected', function(e) {
+                      console.log('selected a circle',e );
+				});
+
+				
+
+				var triangle = new fabric.Triangle({
+					  width: 20, height: 30, fill: 'blue', left: 50, top: 50 ,id:'triangulo1'
+					});
+				triangle.on('selected', function(e) {
+                       console.log('selected triangle', e);
+				});
+				
+				canvas.on('object:moving', function(opt){
+					 log('object:moving', opt) 
+				});
+			
+		}
+
+
+function selectedObject(e) {
+	console.log("selectedObject");
+	var id = canvas.getObjects().indexOf(e.target);
+	console.log('id: ',id);
+}
+
+function log(message, opt, color) {
+    if ((message === 'mouse:move' || message === 'mousemove' || message === 'mouse:move:before' || message === 'mousemove:before') && !document.getElementById('move').checked) {
+      return;
+    }
+    if ((message === 'dragover') && !document.getElementById('dragover').checked) {
+      return;
+	}
+	console.log(opt.clientX, opt.clientY);
+    JSON.stringify(opt);
+  }
+
+  function setCanvasBackgroundImageUrl(url) {
+            if (url && url.length > 0) {
+                fabric.Image.fromURL(url, function (img) {
+                    bgImage = img;
+                    scaleAndPositionImage();
+                });
+            } else {
+                canvas.backgroundImage = 0;
+                canvas.setBackgroundImage('', canvas.renderAll.bind(canvas));
+
+                canvas.renderAll();
+            }
+		}
+		
+		function setCanvasSize(canvasSizeObject) {
+            canvas.setWidth(canvasSizeObject.width);
+            canvas.setHeight(canvasSizeObject.height);
+        }
+
+        function setCanvasZoom() {
+            canvasWidth = canvasOriginalWidth * canvasScale;
+            canvasHeight = canvasOriginalHeight * canvasScale;
+
+            canvas.setWidth(canvasWidth);
+            canvas.setHeight(canvasHeight);
+		}
+		
+		function scaleAndPositionImage() {
+            setCanvasZoom();
+
+            var canvasAspect = canvasWidth / canvasHeight;
+            var imgAspect = bgImage.width / bgImage.height;
+            var left, top, scaleFactor;
+
+            if (canvasAspect >= imgAspect) {
+                var scaleFactor = canvasWidth / bgImage.width;
+                left = 0;
+                top = -((bgImage.height * scaleFactor) - canvasHeight) / 2;
+            } else {
+                var scaleFactor = canvasHeight / bgImage.height;
+                top = 0;
+                left = -((bgImage.width * scaleFactor) - canvasWidth) / 2;
+
+            }
+
+            canvas.setBackgroundImage(bgImage, canvas.renderAll.bind(canvas), {
+                top: top,
+                left: left,
+                originX: 'left',
+                originY: 'top',
+                scaleX: scaleFactor,
+                scaleY: scaleFactor
+            });
+
+            // metodos 
+			canvas.on('mouse:over', function (e) {
+               e.target.setFill("#7BDBFF");
+               //canvas.renderAll();
+             });
+             
+             canvas.on('mouse:out', function (e) {
+                 e.target.setFill('green');
+                 canvas.renderAll();
+             });
+             
+             var panning = false;
+             canvas.on('mouse:up', function (e) {
+                 panning = false;
+             });
+             
+             canvas.on('mouse:down', function (e) {
+                 panning = true;
+             });
+        
+             canvas.renderAll();
+
+        }
+		
+		function agregarElementoExistente() {
+
+			var id             = 'idElem1';
+			var nombreElemento = 'nombreElem1';
+			var codigoInterno  = 'codInterno1';
+			var ancho          = 60;
+			var alto           = 60;
+			var forma          = 'circle';
+			var left           = 649;
+			var top            = 45.99999999999997;
+			var color          = '#80ff80';
+			var scaleX          = 1.4713114754098362;
+			var scaleY          = 1.4713114754098362;
+		    var radius = 30;
+				 
+			/*
+			radius: It specifies the radius of circle.
+			scaleY: It specifies the default vertical scale.
+			*/
+				 
+			var circleE = new fabric.Circle({
+					  fill: color, 
+					  left: left, 
+					  top: top, 
+					  id:id  ,
+					  width: ancho,
+					  height: alto,
+					  color: color,
+					  scaleX : scaleX,
+					  scaleY: scaleY,
+					  radius: radius,
+					  selectable: false
+					});
+			canvas.add(circleE);
+
+			var rectangulo = new fabric.Rect({
+                   fill: "#80ff80",
+                   height: 20,
+                   left: 524,
+                   scaleX: 5.059523809523809,
+                   scaleY: 5.059523809523809,
+                   top: 214,
+                   width: 20,
+                   zoomX: 5.059523809523809,
+                   zoomY: 5.059523809523809,
+				   selectable: false
+                  });
+			canvas.add(rectangulo);
+
+			var triangle = new fabric.Triangle({
+			   fill: "#80ff80",
+               height: 30,
+               left: 23.999999999999986,
+                scaleX: 6.259615384615385,
+                scaleY: 6.259615384615385,
+                top: 258,
+                width: 20,
+				selectable:false
+			});
+
+            canvas.add(triangle); 
+			canvas.renderAll();
+		}
+		
+		
+		function agregarTrianguloNuevo(){
+			var triangle = new fabric.Triangle({
+					  width: 20, 
+					  height: 30, 
+					  fill: '#80ff80', 
+					  left: 80, 
+					  top: 80 ,
+					  id:'trianguloElemento',
+					  stroke: 'black', //propiedad stroke para contorno
+					});
+			canvas.add(triangle);
+			canvas.renderAll();	
+			deshabilitarBotonesFigura();
+			$("#btnPapelera").prop("disabled",false);
+		}
+		
+		function agregarCirculoNuevo(){
+			var circle = new fabric.Circle({
+					  radius: 30, 					 
+					  fill: '#80ff80', 
+					  left: 80, 
+					  top: 80, 
+					  id: 'circuloElemento' ,
+					  stroke: 'black', //propiedad stroke para contorno
+					});
+			canvas.add(circle);
+			canvas.renderAll();
+			deshabilitarBotonesFigura();
+			$("#btnPapelera").prop("disabled",false);
+		}
+		
+		function agregarRectanguloNuevo(){
+			var rect = new fabric.Rect({
+			  left: 80,
+			  top: 80,
+			  fill: '#80ff80',
+			  width: 20,
+			  height: 20,
+			  rx:2,
+			  ry:2,
+			  stroke: 'black', //propiedad stroke para contorno
+			});
+
+			canvas.add(rect);
+			canvas.renderAll();
+			deshabilitarBotonesFigura();
+			$("#btnPapelera").prop("disabled",false);
+		}
+
+		function deshabilitarBotonesFigura() {
+			$("#btnTriangulo").prop("disabled",true);
+			$("#btnCirculo").prop("disabled",true);
+			$("#btnRectangulo").prop("disabled",true);
+		}
+
+		function habilitarBotonesFigura() {
+			$("#btnTriangulo").prop("disabled",false);
+			$("#btnCirculo").prop("disabled",false);
+			$("#btnRectangulo").prop("disabled",false);
+		}
+
+		function eliminarFigura() {
+			canvas.remove(canvas.getActiveObject());
+			habilitarBotonesFigura();
+			$("#btnPapelera").prop("dissabled",true);
+		}
+
+		function mostrarModal(){
+			$("#modal_elemento").show();		
+		
+		}
+		$(document).ready(function() {
+			console.log("ready function");
+         $("#modal_elemento").hide();
+		});
+		</script>
+
+		
+
+
+
+
+
+   <!-- modal elemento-->
+   <div id="modal_elemento" class="modal fade show" role="dialog" aria-labelledby="myModalLabel" style="display: block; padding-right: 14px;" data-toggle="modal" aria-modal="true">
+
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title mt-0">
+					<span id="title-firmante-persona-juridica"> Instalaciones - Elementos
+					</span>
+				</h4>
+			</div>
+
+			<div class="modal-body">
+				<span style="color:red; display:none;" id="span-error-codigo-duplicado">
+										
+				</span>
+				<!--  datos de la instalacion -->
+<div class="card">
+	<div class="card-body">
+		<h4 class="m-t-0 header-title">
+			Datos de la Instalación
+		</h4>
+		<hr>
+
+		
+	</div>
+</div>
+	<input type="hidden" id="idInstalacionElemento" name="instalacionElemento.id" value=""> <input type="hidden" id="idUbicacionElemento" value="">
+				<div class="row" id="error-elemento" style="display: none">
+					<div class="col-md-12">
+						<div class="alert alert-icon alert-danger alert-dismissible fade show" role="alert">
+							<i class="mdi mdi-information"></i>
+							<div id="error-elemento-listado"></div>
+						</div>
+					</div>
+				</div>
+
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item" id="instalacion-tab"><a class="nav-link" data-toggle="tab" href="#elemento-modal" role="tab" aria-controls="home" aria-selected="false"> <span class="d-block d-sm-none"><i class="fa fa-home"></i></span> <span class="d-none d-sm-block"> Datos del Elemento
+						</span>
+					</a></li>
+					<li class="nav-item" id="plano-tab" style="display : ">
+						<a class="nav-link active" data-toggle="tab" href="#plano-modal" role="tab" aria-controls="profile" aria-selected="true"> <span class="d-block d-sm-none"><i class="fa fa-user"></i></span> <span class="d-none d-sm-block"> Ubicación del Elemento en el Plano
+						</span>
+					</a>
+					</li>
+					
+				</ul>
+
+<div class="tab-content">
+<!-- se muestra el plano segun el tipo de instalacion asociada la instalacion -->
+<div class="tab-pane active" id="plano-modal" role="tabpanel" aria-labelledby="plano-tab">
+						
+<div class="card">
+<div class="card-body">
+		<div class="ibox-title">
+			<h4 class="m-t-0 header-title">
+				<i class="fa fa-list margin-right-5" aria-hidden="true"></i>
+				Plano de la Instalación
+			</h4>
+			<hr>
+              
+			
+			<!-- 
+    <a href="#" id="btn-eliminar-link" onclick="moduleElementoPlano.eliminarLink()"  
+       class="btn btn-danger btn-sm btn-rounded waves-effect" href="#">
+    Cancelar 
+    </a>
+    -->
+		</div>
+
+
+<main role="main" class="container container-img"> <!--  
+ <div class="row">
+    <a class="nav-item nav-link ml-5" href="#" onclick="moduleElementoPlano.zoomInModal();"> <i class="fa fa-plus mr-1"></i> Ampliar </a>
+            <a class="nav-item nav-link" href="#" onclick="moduleElementoPlano.zoomOutModal();"> <i class="fa fa-minus mr-1"></i> Reducir </a>
+            <a class="nav-item nav-link" href="#" onclick="moduleElementoPlano.zoomRestablecerModal();"> <i class="fa fa-compress mr-1"></i> Restablecer </a>
+ </div>
+ -->
+<div id="img-mapa-modal" class="ui-draggable ui-draggable-handle" style="position: relative; transform: matrix(1, 0, 0, 1, 0, 0); top: 0px; left: 0px;"><img id="img-mapa-64" src="resources/images/planoInstalacion71.jpg" class="plano"><div id="7102" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(0, 255, 238, 0.5); z-index: 0; top: 125.996px; left: 692.988px;"></div><div id="7103" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(0, 255, 238, 0.5); z-index: 0; top: 125.996px; left: 692.988px;"></div><div id="5666" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 1; top: 200px; left: 745px;"></div><div id="5667" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 170px; left: 745px;"></div><div id="5684" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 468px; left: 878px;"></div><div id="5685" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 319px; left: 876px;"></div><div id="5686" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 218px; left: 758px;"></div><div id="5687" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 211px; left: 657px;"></div><div id="5688" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 212px; left: 592px;"></div><div id="5689" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 235px; left: 475px;"></div><div id="931" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 15px; height: 15px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 435px; left: 550px;"></div><div id="5668" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 479px; left: 878px;"></div><div id="5669" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 319px; left: 864px;"></div><div id="5672" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 218px; left: 745px;"></div><div id="5673" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 224px; left: 657px;"></div><div id="5674" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 224px; left: 593px;"></div><div id="5675" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 246px; left: 475px;"></div><div id="7096" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(0, 0, 255, 0.5); z-index: 0; top: 130px; left: 177px;"></div><div id="7097" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(47, 255, 0, 0.5); z-index: 0; top: 131px; left: 205px;"></div><div id="5677" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 232px; left: 745px;"></div><div id="5678" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 273px; left: 420px;"></div><div id="5679" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 158px; left: 298px;"></div><div id="5680" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 336px; left: 216px;"></div><div id="5681" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 277px; left: 149px;"></div><div id="7100" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 30px; height: 30px; border-radius: 0%; background-color: rgba(54, 181, 69, 0.5); z-index: 2; top: 190px; left: 39.9805px;"></div><div id="920" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 213px; left: 440px;"></div><div id="924" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 65px; height: 65px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 275px; left: 255px;"></div><div id="925" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 15px; height: 15px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 493px; left: 648px;"></div><div id="926" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 15px; height: 15px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 517px; left: 649px;"></div><div id="929" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 177px; left: 523px;"></div><div id="5728" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 404px; left: 832px;"></div><div id="932" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 166px; left: 664px;"></div><div id="918" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 398px; left: 791px;"></div><div id="1308" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 35px; height: 35px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); z-index: 0; top: 88px; left: 2066px;"></div><div id="5731" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 299px; left: 595px;"></div><div id="5732" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 339px; left: 571px;"></div><div id="5733" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 377px; left: 595px;"></div><div id="5734" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 415px; left: 596px;"></div><div id="5735" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 203px; left: 196px;"></div><div id="5736" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 204px; left: 369px;"></div><div id="5737" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 304px; left: 283px;"></div><div id="927" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 213px; left: 612px;"></div><div id="928" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 543px; left: 605px;"></div><div id="934" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); z-index: 0; top: -34px; left: 597px;"></div><div id="7098" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(255, 196, 0, 0.5); z-index: 5; top: 67.9883px; left: 542.988px;"></div><div id="7099" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(255, 196, 0, 0.5); z-index: 3; top: 17.9883px; left: 299.98px;"></div><div id="7101" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 30px; height: 30px; border-radius: 50%; background-color: rgba(0, 0, 255, 0.5); z-index: 0; top: 121.992px; left: 455px;"></div><div id="930" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 274px; left: 833px;"></div><div id="5682" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 224px; left: 576px;"></div><div id="5683" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 10px; height: 10px; border-radius: 0%; background-color: rgba(255, 0, 0, 0.5); z-index: 0; top: 287px; left: 434px;"></div><div id="2062" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 55px; height: 55px; border-radius: 0%; background-color: rgba(255, 255, 0, 0.5); z-index: 0; top: 180px; left: 8px;"></div><div id="937" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 180px; left: 741px;"></div><div id="921" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); z-index: 0; top: -11.9922px; left: 535px;"></div><div id="6962" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(110, 255, 107, 0.5); z-index: 0; top: 178.984px; left: 440px;"></div><div id="933" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 532px; left: 859px;"></div><div id="922" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 70px; height: 70px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 6; top: 174.98px; left: 165.977px;"></div><div id="923" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 70px; height: 70px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 7; top: 174.98px; left: 336.953px;"></div><div id="935" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 178px; left: 637px;"></div><div id="936" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 0; top: 177px; left: 597px;"></div><div id="919" class="links row align-items-center no-actual ui-draggable ui-draggable-handle" style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(128, 255, 128, 0.5); z-index: 4; top: 187.988px; left: 805.996px;"></div></div>
+
+</main>
+</div>
+</div>
+
+					</div>
+
+			
+				</div>
+				<!--  end class form-firmante-persona-juridica -->
+			</div>
+			<hr>
+
+
+
+			<div class="row text-center" id="div-action-add-elemento">
+				<div class="col-md-12 text-center">
+					<button type="button" class="btn btn-secondary btn-rounded waves-effect waves-light" onclick="moduleInstalacionElemento.cancelar()">
+						<i class="fa fa-times mr-1" aria-hidden="true"></i>
+						Cancelar
+					</button>
+					<button type="button" name="guardar" id="btnGuardar" onclick="moduleInstalacionElemento.guardarSubmit()" class="btn btn-success btn-rounded waves-effect waves-light">
+						<i class="fa fa-save"></i>&nbsp;
+						Guardar
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
